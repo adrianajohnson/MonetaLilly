@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  html, body {
+    height: 100%;
+  }
+
+  .container-fluid {
+    padding-top: 150px;
+    padding-bottom: 250px;
+}
+  .container-fluid2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .bg-1 { 
+      background-color:yellow; /* Green */
+      color: #ffffff;
+  }
+
+  .button {
+      width: 100%;
+      height: 100px;
+      font-size: 30px;
+      color: black;
+      border-radius: 4px;
+  }
+  .button-format{
+      font-size: 30px;
+      padding: 20px;
+      margin-top: 70px;
+      margin-bottom: 30px;
+      color: black;
+  }
+  .question-title{
+      padding-bottom: 30px;
+      color:black;
+  }
+
+  .chart {
+  background: white;
+  width: 500px;
+  height: 100px;
+  border-left: 1px dotted #555;
+  border-bottom: 1px dotted #555;
+  padding: 20px 20px 20px 0;
+}
+  </style>
+
+</head>
+<body class="container-fluid bg-1 text-center">
+<h1 class="question-title">Results</h1>
+<svg viewBox="0 0 500 100" class="chart">
+  
+  <polyline
+     fill="none"
+     stroke="#0074d9"
+     stroke-width="2"
+     points="
+       00,120
+       20,60
+       40,80
+       60,20
+       80,80
+       100,80
+       120,60
+       140,100
+       160,90
+       180,80
+       200, 110
+       220, 10
+       240, 70
+       260, 100
+       280, 100
+       300, 40
+       320, 0
+       340, 100
+       360, 100
+       380, 120
+       400, 60
+       420, 70
+       440, 80
+     "
+   />
+  
+</svg>
+<h2 style="color:black;"> You Scored a 67%</h2>
+<button onclick="location.href = 'http://localhost:3000/welcome/home';" type="button" class="btn btn-light btn-md button-format"> Return To User Dashboard</button>
+</body>
+</html>

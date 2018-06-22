@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Single page web app using Angularjs</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family:'Lato', sans-serif;
+  height: 100%;
+  width:100%;
+  background-color:#f01716;
+}
+.loader {
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+  color:white;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: capitalize;
+  font-weight: bold;
+  text-align: center;
+  /*font-size: 30pt;*/
+}
+.loader .image {
+  width: 100px;
+  height: 160px;
+  font-size: 20px;
+  text-align: center;
+  transform-origin: bottom center;
+  animation: 3s rotate infinite;
+  opacity: 0;
+}
+.loader span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+</style>
+
+<script>
+
+$(document).ready(function() {
+  var counter = 0;
+
+  // Start the changing images
+  setInterval(function() {
+    if(counter == 9) { 
+      counter = 0; 
+    }
+
+    changeImage(counter);
+    counter++;
+  }, 3000);
+
+  // Set the percentage off
+  loading();
+});
+
+
+
+    // Your application has indicated there's an error
+    window.setTimeout(function(){
+
+        // Move to a new location or you can do something else
+        window.location.href = "http://localhost:3000/welcome";
+
+    }, 12020);
+
+
+
+function changeImage(counter) {
+  var images = [
+    '<img src="./../images/regular/star.svg">',
+    '<img src="./../images/regular/lightbulb.svg">',
+    '<img src="./../images/regular/paper-plane.svg">',
+    '<img src="./../images/regular/sun.svg">',
+    '<img src="./../images/regular/user-circle.svg">',
+    '<img src="./../images/regular/moon.svg">',
+    '<img src="./../images/regular/heart.svg">',
+    '<img src="./../images/regular/hourglass.svg">',
+    '<img src="./../images/regular/grin.svg">'
+  ];
+
+  $(".loader .image").html(""+ images[counter] +"");
+}
+
+function loading(){
+  var num = 0;
+
+  for(i=0; i<=100; i++) {
+    setTimeout(function() { 
+      $('.loader span').html(num+'%');
+
+      if(num == 100) {
+          
+        loading();
+      }
+      num++;
+    },i*120);
+  };
+
+}
+
+</script>
+<img src="http://localhost:3000/images/MonetaLogo_BlacknWhite.png" width="130" height="130">
+
+ <div class="loader" >
+     <h1 style=" text-align:center"> Moneta </h1>
+  <div class="image">
+    <img src="./../images/regular/lightbulb.svg">
+  </div>
+  <span></span>
+</div>
+
+</body>
+</html>
